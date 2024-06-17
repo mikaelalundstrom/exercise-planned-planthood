@@ -1,57 +1,182 @@
 /* GENERAL & TYPOGRAPHY */
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
-    --font-primary: "Open Sans", sans-serif;
-    --font-secondary: "Maven Pro", sans-serif;
-    --color-primary: #0A846E;
-    --color-secondary: #9E6D52;
-    --color-red: #B93857;
-}
-
-html {
-    scroll-behavior: smooth;
+  --font-primary: "Open Sans", sans-serif;
+  --font-secondary: "Maven Pro", sans-serif;
+  --color-primary: #0a846e;
+  --color-secondary: #9e6d52;
+  --color-red: #b93857;
 }
 
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: var(--font-primary);
-    color: black;
+img {
+  display: block;
 }
 
-header, h1, h2, h3, .card, .button-cta {
-    font-family: var(--font-secondary);
+header,
+h1,
+h3,
+.card,
+.button-cta {
+  font-family: var(--font-secondary);
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
+}
+html {
+  scroll-behavior: smooth;
 }
 
-/* HEADER */
+body {
+  font-family: var(--font-primary);
+  color: black;
 
-nav .links {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1rem;
-    border-bottom: 2px solid #ececec;
-}
+  /* HEADER */
+  header {
+    position: relative;
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      aspect-ratio: 2 / 1;
 
-nav .links a {
-    color: var(--color-primary);
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: all 0.3s;
-}
+      figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
 
-nav .links a:hover {
-    color: var(--color-secondary);
-}
+        &.logo {
+          grid-row: span 2;
+          background: black
+            url("https://images.unsplash.com/photo-1615671524701-9c3dde8fdaa0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+            center / cover;
 
-nav .links-mobile {
-    display: none;
+          img {
+            width: 50%;
+          }
+        }
+
+        &.seedling {
+          background-color: var(--color-secondary);
+        }
+
+        &.dig {
+          background-color: var(--color-primary);
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+
+    /* NAV DESKTOP */
+    nav {
+      .links {
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+        a {
+          color: var(--color-primary);
+          font-weight: 500;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          padding: 1rem;
+          transition: all 0.3s;
+
+          &:hover {
+            color: var(--color-secondary);
+          }
+        }
+      }
+
+      /* NAV MOBILE */
+      .links-mobile {
+        height: 2rem;
+        margin: 0.5rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  /* MAIN */
+  main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      color: var(--color-primary);
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    /* SIDE BY SIDE SECTION */
+    .side-by-side {
+      display: flex;
+      padding: 0 1rem;
+
+      & > * {
+        flex: 1;
+      }
+
+      .image {
+        figure {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 3rem;
+          border-radius: 50%;
+          background-color: var(--color-primary);
+          aspect-ratio: 1 / 1;
+
+          img {
+            width: 50%;
+            height: 50%;
+          }
+        }
+
+        &:last-child figure {
+          margin-left: 3rem;
+        }
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
