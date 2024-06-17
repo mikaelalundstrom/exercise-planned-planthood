@@ -34,6 +34,7 @@ a {
   color: black;
 }
 
+/* CTA BUTTON */
 a.button-cta {
   color: white;
   background-color: var(--color-primary);
@@ -138,7 +139,7 @@ body {
   /* MAIN */
   main {
     padding: 0 2rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 
     & > * {
@@ -257,7 +258,7 @@ body {
 
           .card-caption {
             display: grid;
-            grid-template-columns: 60% 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 1rem 0;
             padding: 1rem;
             align-items: end;
@@ -286,6 +287,7 @@ body {
               border-radius: 0.4rem;
               justify-self: end;
               transition: all 0.3s;
+              display: block;
 
               &:hover {
                 transform: scale(1.1);
@@ -294,6 +296,65 @@ body {
           }
         }
       }
+    }
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 6rem;
+    .contact {
+      display: flex;
+      background: url("https://images.unsplash.com/photo-1586281010691-f9da4be5b1f7?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+        center / cover;
+      color: white;
+      height: 40rem;
+
+      & > * {
+        flex: 1;
+      }
+
+      .contact-caption {
+        background-color: rgba(0, 0, 0, 0.7);
+        display: grid;
+        grid-template-rows: 1fr min-content;
+        align-items: center;
+        justify-items: center;
+
+        h2 {
+          font-size: 3rem;
+          font-weight: 600;
+        }
+
+        address {
+          width: 100%;
+          padding: 0 2rem 2rem 2rem;
+          display: flex;
+          justify-content: space-between;
+
+          section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-style: normal;
+          }
+        }
+      }
+
+      figure.logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 50%;
+        }
+      }
+    }
+
+    .back-to-top {
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
     }
   }
 }
