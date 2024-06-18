@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mina Sidor</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper mina-sidor">
       <!-- HEADER -->
       <header>
         <!-- NAV -->
@@ -25,7 +26,7 @@
         </nav>
 
         <!-- HERO -->
-        <section class="hero" class="mina-sidor">
+        <section class="hero">
           <figure class="logo">
             <img src="./assets/Logo.svg" alt="logo icon" />
           </figure>
@@ -38,7 +39,14 @@
         <article class="planned-planting">
           <!-- NEW PLANTING -->
           <section class="new-planting">
-            <form action=""></form>
+            <h2>Lägg till ny plantering:</h2>
+            <form>
+              <label for="plant">Planta:</label>
+              <input type="text" id="plant" name="plant" />
+              <label for="date">Datum:</label>
+              <input type="text" id="date" name="date" />
+              <button type="submit" class="button-cta">LÄGG TILL</button>
+            </form>
           </section>
 
           <!-- PLANNED GALLERY -->
@@ -106,13 +114,34 @@
           </section>
         </article>
       </main>
+
       <!-- FOOTER -->
       <footer>
         <section class="img-gallery">
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <figure class="image">
+            <img
+              src="https://s3-alpha-sig.figma.com/img/5cf3/a05d/8aae1b85a0b3a5a8caa12c31e4b5e417?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OIe5p4sh5fJs3DrNvA8UCTsahBWIUDRxtqafznIoCPa2JnTdjAGAyXcaZelJ7MS9loA2lxognOM~VslRibsTaSTldWhc~dPbpuemrhFxQXKakjBSCPp8F6r16WLRZCQV2u9jN3soXKuTwqETVdZknScktsl6bwxkQk-1Ocqg-Ojg8of280uArVChzAb86DQVnez~rtMT8E8kcvZI0rbNolnnJANChOlB18ppkBuAU0w594DcXfugHkjJP8DxKVwGnRI-TzET43-eSV5D28bU6cdY0Xg1uGJ5pfMOvZoGaYt8-0kT8EoMPY2B0eX~J8V5lA5s3wEok6CgWltcdBLe2Q__"
+              alt="farmer"
+            />
+          </figure>
+          <figure class="image">
+            <img
+              src="https://s3-alpha-sig.figma.com/img/9c89/6dec/e9304f9d1a254dcbd5190f2a7a82dddb?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k62dHlKSw8Pt3~RURD3qzzm8GPO6V4mHkoeuvzrZklOVSGgU0Kwc-R6avRgBo9A2GQ0-XPrduqW0hg6wOvhJR2zhm1dS~HpUtJnmImg0kBiEaKHaii-yZsNeswK2YdFf2wve4OvEAQBD81JYXw0149wRxQTY-9zaoYAxb1vWU8ZHzWljI6ZpmQTC6pH5gd8nicdhIhfgMKd-4EMPa4-~xuuxLcmOpKuLcbPIOinUFSZz1zmvQ~b0nv147Bxojx9SvNeHosokOs~o5HZY1T5g91wHu42CWYBWSBpoj-~1kbW~iKrK8Du6YcegDv2jdOiYwMDNDZQzq2Cc1KeRFDBl4A__"
+              alt="watering can"
+            />
+          </figure>
+          <figure class="image">
+            <img
+              src="https://s3-alpha-sig.figma.com/img/1c30/4c45/4c8bb563f38c73a410401e869d7491e4?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SFPhg9YhL6NzgKoNwHTEeWO7ZUPrDRdppPoKahnWFswUKuKfzh0NxuTcTmYSkR-8GQPfVsyiTrlabAKNSTclr-IyY9SYHLIizb1hrkbuy7xVudvudadIK0-9n6DL9bVRw8EztsLVUwjAYTuNlMwTWSFCLLP9ZuGcbrMg-j6fvvjTMq-gl2Npbb5nE5HVB~HJXkuCnGyDpCysgD0bqxn5O0nxd0hFzolesKwPYPlOFZ7bl5NvG~0o-V6vVbDDmTiUkdLOCU9rmcR77-3rGvZXYAgQnuyHsYW739Hw~0Cu7hy~y4cF5mHYpzt90OWBtHOy4T~FM9xLOddz1~FGlZRODw__"
+              alt="vegetables"
+            />
+          </figure>
+          <figure class="image">
+            <img
+              src="https://s3-alpha-sig.figma.com/img/05eb/62d1/103ffdf6673c1ce32da7b311e04da5d7?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Cu70Wgv3qeoS1oYcG3AaAJLu6vplSHnboyCU-kdmDEnRj-s74mc~j-z2LcVO4VhwYSZirVdT8bCIIYanuHOFImkxbGaHmxs0kuD7HFQnsrDKXqFHmj0rXwIzpx~iXRk96FNg15Hr6T-VY1sb3Kx-10pglRaThS-KGWhWknPz~OlHua4akZd9XJsp5278CmimcuBnzU5hJT43YQ30zLBr0WgSZpqseh0gMh80DuONhCOWsBNYCEsJGGEeOculvxfBcNb6B-1ifvukB2TDn0JujI022X2QuE3ddKdrwywOwZXoQ3CmaJTNuzSz6iK8XxK-CeeQheo4hto8reeL6rBySA__"
+              alt="farmer"
+            />
+          </figure>
         </section>
         <section class="back-to-top">
           <a href="#">Till toppen av sidan</a>

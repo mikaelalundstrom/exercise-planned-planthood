@@ -34,29 +34,31 @@ img {
 a {
   text-decoration: none;
   color: black;
+}
 
-  /* CTA BUTTON */
-  &.button-cta {
-    color: white;
-    background-color: var(--color-primary);
-    font-family: var(--font-secondary);
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 1rem 3rem;
-    border-radius: 0.5rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s;
-    display: block;
+/* CTA BUTTON */
+a.button-cta,
+button.button-cta {
+  color: white;
+  background-color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  border-radius: 0.7rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  display: block;
+  border: none;
 
-    &:hover {
-      background-color: var(--color-secondary);
-      transform: scale(1.1);
-    }
+  &:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.1);
+  }
 
-    @media (max-width: 768px) {
-      padding: 0.5rem 1.5rem;
-      font-size: 1.2rem;
-    }
+  @media (max-width: 768px) {
+    padding: 0.7rem 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -78,7 +80,7 @@ a {
     font-family: var(--font-secondary);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     /* HERO */
-    .hero {
+    .hero-gallery {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
@@ -537,6 +539,116 @@ a {
       @media (max-width: 768px) {
         font-size: 0.8rem;
         padding: 1.5rem;
+      }
+    }
+  }
+}
+
+/* MINA SIDOR PAGE */
+.wrapper.mina-sidor {
+  /* HEADER */
+  header {
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      align-items: center;
+      background: url("https://images.unsplash.com/photo-1586281010691-f9da4be5b1f7?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+        center / cover;
+      height: 25rem;
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: white;
+      }
+    }
+  }
+  main {
+    .planned-planting {
+      @media (max-width: 768px) {
+        margin-top: 1rem;
+      }
+
+      .new-planting {
+        margin-bottom: 5rem;
+        align-self: flex-start;
+        width: 100%;
+
+        h2 {
+          font-weight: normal;
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+
+          @media (max-width: 768px) {
+            text-align: center;
+          }
+        }
+
+        form {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto auto;
+          grid-auto-flow: column;
+          gap: 0 2rem;
+
+          @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-auto-flow: row;
+          }
+
+          input {
+            border: none;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 0.4rem;
+            font-size: 1rem;
+          }
+
+          button {
+            grid-row: -1 / span 1;
+            grid-column: 1 / -1;
+            margin-top: 2rem;
+            justify-self: center;
+
+            @media (max-width: 768px) {
+              grid-row: 5 / span 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 2rem;
+    .img-gallery {
+      background-color: var(--color-secondary);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 1rem;
+      padding: 2rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        padding: 1.5rem;
+      }
+
+      figure.image {
+        aspect-ratio: 3/4;
+        opacity: 0.7;
+
+        @media (max-width: 768px) {
+          aspect-ratio: 2/1;
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
