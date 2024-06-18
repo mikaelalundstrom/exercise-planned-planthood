@@ -1,9 +1,10 @@
-/* GENERAL & TYPOGRAPHY */
-@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/* GENERAL */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Maven+Pro:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
   --font-primary: "Open Sans", sans-serif;
   --font-secondary: "Maven Pro", sans-serif;
+  --font-tertiary: "Lato", sans-serif;
   --color-primary: #0a846e;
   --color-secondary: #9e6d52;
   --color-red: #b93857;
@@ -18,54 +19,67 @@ html {
   box-sizing: border-box;
 }
 
-img {
-  display: block;
+body {
+  font-family: var(--font-primary);
+  color: black;
+  background-color: #fcf6fc;
 }
 
-header,
-h1,
-h3,
-.button-cta {
-  font-family: var(--font-secondary);
+img {
+  display: block;
 }
 
 a {
   text-decoration: none;
   color: black;
-}
 
-/* CTA BUTTON */
-a.button-cta {
-  color: white;
-  background-color: var(--color-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 1rem 3rem;
-  border-radius: 0.5rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
-  display: block;
+  /* CTA BUTTON */
+  &.button-cta {
+    color: white;
+    background-color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    display: block;
 
-  &:hover {
-    background-color: var(--color-secondary);
-    transform: scale(1.1);
+    &:hover {
+      background-color: var(--color-secondary);
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.5rem 1.5rem;
+      font-size: 1.2rem;
+    }
   }
 }
 
-/* BODY */
-body {
-  font-family: var(--font-primary);
-  color: black;
+/* PAGE CONTENT */
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 
   /* HEADER */
   header {
     position: relative;
+    font-family: var(--font-secondary);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     /* HERO */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       aspect-ratio: 2 / 1;
+
+      @media (max-width: 768px) {
+        aspect-ratio: 2 / 3;
+      }
 
       figure {
         display: flex;
@@ -78,6 +92,10 @@ body {
           background: black
             url("https://images.unsplash.com/photo-1615671524701-9c3dde8fdaa0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
             center / cover;
+
+          @media (max-width: 768px) {
+            grid-column: span 2;
+          }
 
           img {
             width: 50%;
@@ -94,6 +112,11 @@ body {
 
         img {
           height: 100%;
+
+          @media (max-width: 768px) {
+            height: auto;
+            width: 80%;
+          }
         }
       }
     }
@@ -103,7 +126,10 @@ body {
       .links {
         display: flex;
         justify-content: space-evenly;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+        @media (max-width: 768px) {
+          display: none;
+        }
 
         a {
           color: var(--color-primary);
@@ -129,8 +155,13 @@ body {
         right: 0;
         display: none;
 
+        @media (max-width: 768px) {
+          display: block;
+        }
+
         img {
           height: 100%;
+          cursor: pointer;
         }
       }
     }
@@ -139,8 +170,10 @@ body {
   /* MAIN */
   main {
     padding: 0 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
 
     & > * {
       margin: 3rem 0;
@@ -148,10 +181,15 @@ body {
 
     h1 {
       color: var(--color-primary);
+      font-family: var(--font-secondary);
       font-weight: 500;
       text-transform: uppercase;
       font-size: 3rem;
       text-align: center;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
     }
 
     /* SIDE BY SIDE SECTION */
@@ -159,11 +197,25 @@ body {
       display: flex;
       padding: 0 1rem;
 
+      @media (max-width: 768px) {
+        padding: 0;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 4rem;
+      }
+
       & > * {
         flex: 1 0 0;
       }
 
       .image {
+        @media (max-width: 768px) {
+          width: 80%;
+        }
+
         figure {
           display: flex;
           justify-content: center;
@@ -172,6 +224,10 @@ body {
           border-radius: 50%;
           background-color: var(--color-primary);
           aspect-ratio: 1 / 1;
+
+          @media (max-width: 768px) {
+            margin: 0;
+          }
 
           img {
             width: 50%;
@@ -182,6 +238,10 @@ body {
         &:last-child figure {
           margin-left: 3rem;
           margin-right: 0;
+
+          @media (max-width: 768px) {
+            margin: 0;
+          }
         }
       }
 
@@ -190,9 +250,17 @@ body {
         flex-direction: column;
         justify-content: center;
 
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+
         h2 {
           font-size: 2rem;
           font-weight: 700;
+
+          @media (max-width: 768px) {
+            font-size: 1.2rem;
+          }
         }
 
         p {
@@ -202,10 +270,18 @@ body {
 
         .button-cta {
           align-self: flex-start;
+
+          @media (max-width: 768px) {
+            align-self: center;
+          }
         }
 
         &:last-child .button-cta {
           align-self: flex-end;
+
+          @media (max-width: 768px) {
+            align-self: center;
+          }
         }
       }
     }
@@ -228,6 +304,11 @@ body {
         font-size: 2rem;
         font-weight: 500;
         margin-bottom: 2rem;
+        font-family: var(--font-secondary);
+
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
       }
 
       .cards {
@@ -235,6 +316,11 @@ body {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem 1.5rem;
         margin-bottom: 3rem;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
 
         .card {
           box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
@@ -261,25 +347,49 @@ body {
             grid-template-columns: 1fr 1fr;
             gap: 1rem 0;
             padding: 1rem;
-            align-items: end;
+            align-items: center;
 
             h4.plant {
               font-weight: 600;
               font-size: 1.5rem;
+              font-family: var(--font-tertiary);
+
+              @media (max-width: 900px) {
+                font-size: 1.3rem;
+              }
+              @media (max-width: 768px) {
+                font-size: 1.1rem;
+              }
             }
 
             p.planted-date {
               font-weight: 700;
+              text-align: right;
               justify-self: end;
+
+              @media (max-width: 768px) {
+                font-size: 0.8rem;
+              }
+              @media (max-width: 480px) {
+                font-size: 0.7rem;
+              }
             }
 
             p.planted-by {
-              font-family: var(--font-secondary);
+              font-family: var(--font-tertiary);
+
+              @media (max-width: 768px) {
+                font-size: 0.8rem;
+              }
+              @media (max-width: 480px) {
+                font-size: 0.7rem;
+              }
             }
 
             a.button-remove {
               font-family: var(--font-secondary);
               font-weight: 600;
+              font-size: 0.9rem;
               text-transform: uppercase;
               color: white;
               background-color: var(--color-red);
@@ -292,6 +402,30 @@ body {
               &:hover {
                 transform: scale(1.1);
               }
+
+              @media (max-width: 900px) {
+                font-size: 0.8rem;
+              }
+              @media (max-width: 768px) {
+                display: none;
+              }
+            }
+
+            img.remove {
+              width: 1.5rem;
+              height: 1.5rem;
+              justify-self: end;
+              display: none;
+              cursor: pointer;
+              transition: all 0.3s;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+
+              @media (max-width: 768px) {
+                display: block;
+              }
             }
           }
         }
@@ -302,12 +436,18 @@ body {
   /* FOOTER */
   footer {
     margin-top: 6rem;
+
     .contact {
       display: flex;
       background: url("https://images.unsplash.com/photo-1586281010691-f9da4be5b1f7?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
         center / cover;
       color: white;
-      height: 40rem;
+      height: 35rem;
+
+      @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        height: 60rem;
+      }
 
       & > * {
         flex: 1;
@@ -319,10 +459,15 @@ body {
         grid-template-rows: 1fr min-content;
         align-items: center;
         justify-items: center;
+        font-family: var(--font-secondary);
 
         h2 {
           font-size: 3rem;
-          font-weight: 600;
+          font-weight: 500;
+
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
         }
 
         address {
@@ -330,12 +475,22 @@ body {
           padding: 0 2rem 2rem 2rem;
           display: flex;
           justify-content: space-between;
+          @media (max-width: 768px) {
+            font-size: 0.9rem;
+          }
 
           section {
             display: flex;
             align-items: center;
             gap: 1rem;
             font-style: normal;
+
+            img {
+              height: 2rem;
+              @media (max-width: 768px) {
+                height: 1.5rem;
+              }
+            }
           }
         }
       }
@@ -355,6 +510,11 @@ body {
       padding: 1rem;
       text-align: center;
       font-size: 1.2rem;
+
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+        padding: 1.5rem;
+      }
     }
   }
 }
